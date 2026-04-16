@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Snake – Survive the Hurdles</title>
+  <meta name="description" content="An electrifying snake game featuring surprise hurdles, power-ups, and neon visuals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background particles -->
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- Start Screen -->
+  <div class="screen" id="startScreen">
+    <div class="screen-content">
+      <div class="logo-wrap">
+        <div class="logo-glow"></div>
+        <h1 class="logo-title">NEON<br/><span>SNAKE</span></h1>
+      </div>
+      <p class="subtitle">Navigate the neon grid. Dodge the hurdles. Survive.</p>
+      <div class="features">
+        <div class="feat"><span class="feat-icon">⚡</span> Random Hurdles</div>
+        <div class="feat"><span class="feat-icon">💊</span> Power-Ups</div>
+        <div class="feat"><span class="feat-icon">🔥</span> Speed Surges</div>
+      </div>
+      <button class="btn-primary" id="startBtn">START GAME</button>
+      <div class="controls-hint">
+        <span>↑ ↓ ← →</span> or <span>W A S D</span> to move
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div class="screen hidden" id="gameScreen">
+    <div class="hud">
+      <div class="hud-block">
+        <div class="hud-label">SCORE</div>
+        <div class="hud-value" id="score">0</div>
+      </div>
+      <div class="hud-center">
+        <div class="level-badge" id="levelBadge">LVL 1</div>
+        <div class="hurdle-warning hidden" id="hurdleWarning">⚠ HURDLE INCOMING!</div>
+      </div>
+      <div class="hud-block">
+        <div class="hud-label">HIGH SCORE</div>
+        <div class="hud-value" id="highScore">0</div>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas"></canvas>
+      <div class="scan-line"></div>
+    </div>
+
+    <div class="powerup-bar" id="powerupBar"></div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div class="screen hidden" id="gameOverScreen">
+    <div class="screen-content">
+      <div class="game-over-title">GAME OVER</div>
+      <div class="result-grid">
+        <div class="result-block">
+          <div class="result-label">YOUR SCORE</div>
+          <div class="result-value" id="finalScore">0</div>
+        </div>
+        <div class="result-block">
+          <div class="result-label">HIGH SCORE</div>
+          <div class="result-value" id="finalHigh">0</div>
+        </div>
+        <div class="result-block">
+          <div class="result-label">LEVEL</div>
+          <div class="result-value" id="finalLevel">1</div>
+        </div>
+        <div class="result-block">
+          <div class="result-label">LENGTH</div>
+          <div class="result-value" id="finalLength">1</div>
+        </div>
+      </div>
+      <div class="death-reason" id="deathReason"></div>
+      <button class="btn-primary" id="replayBtn">PLAY AGAIN</button>
+      <button class="btn-secondary" id="menuBtn">MAIN MENU</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
